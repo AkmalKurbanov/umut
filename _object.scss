@@ -1,0 +1,96 @@
+.object {
+  margin-bottom: 113px;
+
+  &__item {
+    position: relative;
+    @include aic;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #000000 -4.98%, rgba(0, 0, 0, 0) 43.45%);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__status {
+    cursor: default;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+  }
+
+ 
+
+  &__info {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 40px;
+    padding-left: 100px;
+    background: linear-gradient(360deg, #000000 -4.98%, rgba(0, 0, 0, 0) 43.45%);
+    @include fdc;
+    @include jfcfe;
+
+    * {
+      color: $wc;
+    }
+  }
+
+  &__name {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  &__info-top {
+    margin-bottom: 10px;
+  }
+
+  &__info-bottom {
+    @include aic;
+  }
+
+  &__info-bottom-item {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__type {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: #d9d9d980;
+    width: 60px;
+    height: 60px;
+    bottom: 15%;
+    top: auto;
+
+    &:after {
+      color: $wc;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 100px;
+  }
+
+  .swiper-button-next {
+    right: auto;
+    left: 200px;
+  }
+}

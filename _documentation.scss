@@ -1,0 +1,84 @@
+.documentation {
+  margin-bottom: 130px;
+
+
+
+  .container {
+    overflow: hidden;
+  }
+
+  &__type {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+
+    &--detail {
+      display: block;
+    }
+  }
+
+  &__item {
+    border: 1px solid $mc;
+    padding: 30px 45px;
+    margin-bottom: 30px;
+  }
+
+  &__item-name {
+    color: $bc;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__item-link {
+    font-size: 22px;
+    color: $mc;
+    transition: $tr;
+    position: relative;
+
+    &:hover {
+      &:after {
+        transform: translateY(1px);
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      font-family: 'icon';
+      font-size: 14px;
+      margin-left: 9px;
+      top: 50%;
+      transform: translateY(-40%);
+      transition: $tr;
+    }
+
+    &:hover {
+      color: #155dea;
+    }
+  }
+
+  .swiper {
+    overflow: inherit;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: -65px;
+
+    &:after {
+      font-size: 30px;
+    }
+  }
+
+  .swiper-button-prev {
+    left: auto;
+    right: 60px;
+  }
+
+  .swiper-button-next {
+    right: 20px;
+  }
+
+}

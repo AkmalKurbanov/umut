@@ -1,0 +1,28 @@
+.advantages {
+  margin-bottom: 130px;
+
+  &__banner {
+    position: relative;
+    margin-bottom: 55px;
+
+    img {
+      width: 103%;
+      margin-left: -3%;
+    }
+  }
+
+  &__banner-title {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+    background: #DD3241;
+    background: linear-gradient(to right, #DD3241 0%, #95202A 25%, #DD3241 40%, #95202A 61%, #DD3241 47%, #DD3241 50%, #95202A 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 90px;
+  }
+
+
+  
+
+}

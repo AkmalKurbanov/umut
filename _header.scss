@@ -1,0 +1,95 @@
+.header {
+  font-family: $font;
+  padding: 20px 0;
+
+  &--main {
+    background-color: #A5B7C3;
+
+    .header__phones {
+      display: block;
+    }
+  }
+
+  &__logo {
+    max-width: 145px;
+    width: 100%;
+  }
+
+  &__col-wrap {
+    @include aic-jfcsb;
+  }
+
+  &__col {
+    &:last-child {
+      @include aic;
+    }
+
+    .nav {
+      @include aic;
+      margin-right: 140px;
+
+      li {
+        margin-right: 50px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .active {
+          a {
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+
+        a {
+          margin-right: 48px;
+          font-size: 22px;
+          color: #141515;
+          position: relative;
+          padding-bottom: 5px;
+
+          &:after {
+            position: absolute;
+            content: '';
+            height: 2px;
+            width: 100%;
+            background-color: $bc;
+            left: 0;
+            width: 0;
+            bottom: 0;
+            transition: $tr;
+          }
+
+          &:hover {
+            &:after {
+              width: 100%;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__phones {
+    @include fdc;
+  }
+
+  &__phone {
+    color: $mc;
+    margin-right: 48px;
+    font-size: 22px;
+    font-family: $jost;
+    font-weight: 500;
+
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+footer.footer
+  .container
+    .wrap
+      .col
+        .wrap
+          .col
+            a(href="mailto:umut.stroy@gmail.com").footer__email umut.stroy@gmail.com 
+            ul.social
+              mixin social(icon, link)
+                li 
+                  a(href=link)
+                    i(class=icon)
+              +social('icon-instagram','#')         
+              +social('icon-facebook','#')         
+              +social('icon-whatsapp','#')         
+          .col
+            ul.footer__nav
+              mixin nav(item, link)
+                li 
+                  a(href=link)=item 
+              +nav('Объекты', '#')    
+              +nav('Акции', '#')    
+              +nav('Новости', '#')    
+              +nav('О нас', '#')    
+            ul.footer__phone
+              mixin phone(phone)
+                li 
+                  a(href="tel:"+phone)=phone 
+              +phone('+996 551 44 22 22')    
+              +phone('+996 221 44 22 22')    
+      .col
+        a(href="#").footer__logo
+          img(src="/img/logo-footer.png", alt="")

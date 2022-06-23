@@ -1,0 +1,168 @@
+.form {
+  margin-bottom: 110px;
+
+  &__wrap {
+    @include aistr;
+  }
+
+  &__col {
+    @include aic;
+
+    &:first-child {
+      padding: 60px 90px;
+      background-color: #F2F2F2;
+      width: 48%;
+    }
+
+    &:last-child {
+      width: 52%;
+    }
+  }
+
+  form {
+    @include jfcsb-fww;
+
+    button {
+      &.btn--empty {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 100px;
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    width: calc(50% - 25px);
+    background-color: #E6E6E6;
+    padding: 5px 18px;
+    text-align: center;
+    margin-bottom: 50px;
+    min-height: 70px;
+    @include aic;
+
+    &:hover {
+      .form__input-wrap {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__input-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include aic;
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: 1px;
+      width: 0;
+      background-color: $wc;
+      bottom: 0;
+      left: 0;
+      transition: $tr;
+    }
+  }
+
+  input {
+    color: $bc;
+    width: 100%;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+
+    &::placeholder {
+      color: $bc;
+      text-align: center;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: 25px;
+    top: -75px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    &:hover {
+
+      &:before,
+      &:after {
+        background-color: $mc;
+      }
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $wc;
+      transition: $tr;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--modal {
+    margin: 0;
+    position: fixed;
+    top: -100%;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, 0.45);
+    @include aic;
+    opacity: 0;
+    transition: $tr;
+
+    .container {
+      position: relative;
+    }
+
+    .form__wrap {
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    .form__col {
+      &:first-child {
+        width: 55%;
+      }
+
+      &:last-child {
+        width: 45%;
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+
+  &.open {
+    top: 0;
+    opacity: 1;
+  }
+}

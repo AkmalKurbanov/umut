@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="https://unpkg.com/swiper/swiper-bundle.min.css")
+    link(rel="stylesheet", href="/style.css")
+    link(rel="stylesheet", href="/icon/css/icon.css")
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap' rel='stylesheet')
+    script(src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full")
+    script(type='text/javascript').
+    script(type='text/javascript').
+      var map;
+      DG.then(function () {
+      map = DG.map('map', {
+      center: [42.846330, 74.561256],
+      scrollWheelZoom: false,
+      zoom: 17
+      });
+      var myIcon = L.icon({
+      iconUrl: 'img/Мурас-marker.png',
+      iconSize: [70, 70],
+      });
+      DG.marker([42.8462, 74.56065],{icon: myIcon}).addTo(map).bindLabel('ЖД «Мурас» ул. Курчатова 23, <br> «Нижний Джал»', {static: true})});
+
+
+
+  body
+    include header-inside-page
+    
+    .hero.hero--inner-page(style="background-image: url('/img/Мурас.png');")
+    
+    .container
+      .title-wrap
+        h2.title Жилой дом «Мурас»
+        a(href="#").link Показать на карте   
+        a(href="#").link Посмотреть планировки 
+        a(href="#").link Документация  
+        a(href="#").link План типового этажа   
+
+      .wrap
+          mixin item(img,title) 
+            a(href="#").col 
+              .img.img--tranlste-off
+                img(src="/img/Мурас"+img+".jpg", alt="") 
+              .title!=title 
+          +item(1,'10 этажей')
+          +item(2,'4 подъезда')
+          +item(3,'135 квартир')
+
+      include form
+ 
+      .documentation 
+        .container
+          h2.title Документация
+          
+          .documentation__type.documentation__type--detail
+            .swiper.Swiper4
+              .swiper-wrapper
+                mixin documentation(name, link)
+                  .swiper-slide
+                    .documentation__item
+                      .documentation__item-name!=name
+                      a(href=link download).documentation__item-link Скачать PDF файл
+                +documentation('Лицензия <br> на строительтво','#')
+                +documentation('Градостроительное <br> заключение','#')
+                +documentation('Лицензия <br> на строительтво','#')
+                +documentation('Градостроительное <br> заключение','#')
+                +documentation('Лицензия <br> на строительтво','#')
+                +documentation('Градостроительное <br> заключение','#')
+                +documentation('Лицензия <br> на строительтво','#')
+                +documentation('Градостроительное <br> заключение','#')
+              .swiper-button-next
+              .swiper-button-prev   
+
+      #map
+
+      include footer
+
+
+    
+    script(src="https://code.jquery.com/jquery-3.6.0.js")  
+    script(src="https://unpkg.com/swiper/swiper-bundle.min.js")  
+    script(src="/script.js")
