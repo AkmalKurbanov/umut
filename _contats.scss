@@ -1,0 +1,52 @@
+.contacts {
+  @include aic;
+  position: fixed;
+  background-color: rgba($bc, .45);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  top: -100%;
+  opacity: 0;
+  transition: $tr;
+
+  &__wrap {
+    max-width: 1280px;
+    width: 100%;
+    min-height: 400px;
+    margin: auto;
+    position: relative;
+  }
+
+  &__header {
+    background-color: $wc;
+    @include aic-jfcsb;
+    padding: 85px 100px;
+
+
+    a {
+      color: $mc;
+      font-size: 36px;
+      margin-right: 50px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .title {
+    margin: 0;
+    padding: 0;
+  }
+
+  #contacts {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  &.open {
+    top: 0;
+    opacity: 1;
+  }
+}

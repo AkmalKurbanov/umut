@@ -3,18 +3,18 @@ header.header.header--main
     .header__col-wrap
       .header__col
         .header__logo
-          a(href="#")
+          a(href="/")
             img(src="/img/logo.png" alt="logo") 
       .header__col
         ul.nav
-          mixin nav(item)
+          mixin nav(item, anchor, mod)
             li
-              a(href="#")=item
-          +nav('Объекты')
+              a(href="#"+anchor class=mod data-scroll)=item
+          +nav('Объекты','objects')
           +nav('Акции')
           +nav('Новости')
-          +nav('О нас')
-          +nav('Контакты')
+          +nav('О нас','about')
+          +nav('Контакты','', 'contacts-js')
         .header__phones
           mixin phone(phone)
             a(href="tel:"+phone  class="header__phone")=phone 

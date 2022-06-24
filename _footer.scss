@@ -11,7 +11,7 @@
       width: 50%;
 
       &:last-child {
-        width: 290px;
+        width: 250px;
       }
 
       .col {
@@ -81,7 +81,8 @@
   }
 
   &__logo {
-    max-width: 280px;
+    max-width: 250px;
     width: 100%;
+    @include aic;
   }
 }
