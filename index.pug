@@ -6,7 +6,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Document
     link(rel="stylesheet", href="https://unpkg.com/swiper/swiper-bundle.min.css")
-    link(rel="stylesheet", href="/style.css")
+    link(rel="stylesheet", href="styles/style.css")
     link(rel="stylesheet", href="/icon/css/icon.css")
     link(href='https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css' rel='stylesheet')
     script(src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full")
@@ -25,9 +25,8 @@ html(lang="en")
       DG.marker([42.849721, 74.588852],{icon: myIcon}).addTo(contacts).bindPopup('Строительная копания «UMUT» <br> улица Джаманбаева, 33',)}); 
 
   body
+    
     include ./partials/header-main-page
-    include ./partials/form-modal
-    include ./partials/contacts
       
     .hero
       .hero__video-bg
@@ -55,11 +54,16 @@ html(lang="en")
       .container
         .title-wrap
           h2.title Наши объекты
+            .mobile-nav   
+              .object-left.left
+                i.icon-angle-down
+              .object-right.right
+                i.icon-angle-down
           .select.filter-select
             .selected Все объекты
             .select-dropdown
               .select-option.all-objects-js(data-value="Все объекты") Все объекты
-              .select-option.building-objects-js(data-value="Строящиеся") Строящиеся
+              .select-option.building-objects-js(data-value="На этапе строительства") На этапе строительства
               .select-option.done-objects-js(data-value="Завершенные") Завершенные
           a(href="#").link.link-js Показать на карте   
             
@@ -69,15 +73,14 @@ html(lang="en")
             .swiper-wrapper
               mixin allObjects(img,name,address,type,floor,linkmap,link,status)
                 .swiper-slide
-                  a(href=link+".html").object__item
+                  .object__item(style="background-image: url('/img/"+img+"')")
                     .hidden-link(data-value=linkmap hidden target="_blank")
-                    img(src="/img/"+img, alt="")
                     if status === "none"
                     else 
                       .object__status.btn=status
                     .object__info
                       .object__info-top
-                        .object__name=name
+                        a(href=link+".html").object__name=name
                       .object__info-bottom
                         .object__info-bottom-item=address
                         .object__info-bottom-item=type
@@ -89,12 +92,12 @@ html(lang="en")
             .swiper-button-next
             .swiper-button-prev
 
-        //- Строящиеся объекты
+        //- На этапе строительства
         .object__type.building-objects
           .swiper.Swiper2
             .swiper-wrapper
-              +allObjects('object', ' Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '#3', 'На стадии строительтва')
-              +allObjects('object', ' Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '#4', 'На стадии строительтва')
+              +allObjects('jetigen/jetigen.png', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', '/jetigen.html#location', 'jetigen', 'На стадии строительтва')
+              +allObjects('muras/muras.png', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '/muras.html#location', '/muras', 'На стадии строительтва')
             .swiper-button-next
             .swiper-button-prev
 
@@ -102,29 +105,51 @@ html(lang="en")
         .object__type.done-objects
           .swiper.Swiper3
             .swiper-wrapper
-              +allObjects('object', ' Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '#5', 'Строительтво завершено')
-              +allObjects('object', ' Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '#6', 'Строительтво завершено')
+              +allObjects('muras/muras.png', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '/muras.html#location', '/muras', 'Завершен')
+              +allObjects('jetigen/jetigen.png', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', '/jetigen.html#location', 'jetigen', 'Завершен')
             .swiper-button-next
             .swiper-button-prev
 
     .apartment
       .container
-        h2.title Ваша квартира мечты
-        .wrap
-          mixin item(img,title,mod) 
-            a(href="#" class=mod).col 
-              .img 
-                img(src="/img/col"+img+".jpg", alt="") 
-              .title!=title 
-          +item(1,'1 комнатные квартиры','one-room-js')
-          +item(2,'2 комнатные квартиры','two-room-js')
-          +item(3,'3 комнатные квартиры','three-room-js')
+        h2.title 
+          span Ваша квартира мечты
+          span.mobile Планировки
+          .mobile-nav   
+            .object-left.left
+              i.icon-angle-down
+            .object-right.right
+              i.icon-angle-down
+        .swiper.apartment-slider
+          .swiper-wrapper.wrap
+            mixin item(img,title,mod)
+              .swiper-slide
+                a(href="#" class=mod).col 
+                  .img 
+                    img(src="/img/col"+img+".jpg", alt="") 
+                  .title!=title 
+            +item(1,'1 комнатные квартиры','one-room-js')
+            +item(2,'2 комнатные квартиры','two-room-js')
+            +item(3,'3 комнатные квартиры','three-room-js')
+            +item(1,'1 комнатные квартиры','one-room-js')
+            +item(2,'2 комнатные квартиры','two-room-js')
+            +item(3,'3 комнатные квартиры','three-room-js')
+            +item(1,'1 комнатные квартиры','one-room-js')
+            +item(2,'2 комнатные квартиры','two-room-js')
+            +item(3,'3 комнатные квартиры','three-room-js')
+          .swiper-button-next
+          .swiper-button-prev
+          
     include ./partials/apartment-filter
+    include ./partials/application-form
+    
     .advantages#about
+      
+      .advantages__banner.container  
+        //- .advantages__banner(style="background-image: url('/img/advantage_banner.png')")       
+        img(src="/img/advantage_banner.png", alt="")   
+        .advantages__banner-title Качество <br> превыше <br> всего 
       .container 
-        .advantages__banner 
-          img(src="/img/advantage_banner.png", alt="")          
-          .advantages__banner-title Качество <br> превыше <br> всего 
         .wrap
           mixin item(img,title) 
             .col 
@@ -141,13 +166,13 @@ html(lang="en")
     .documentation 
       .container
         .title-wrap
-          h2.title Наша документация
+          h2.title Документация
           .select.filter-select
             .selected Все
             .select-dropdown
               .select-option.all-ducumentation-js(data-value="Все") Все 
-              .select-option.objects-js(data-value="Объекты") Объекты
-              .select-option.company-js(data-value="Компания") Компания
+              .select-option.muras-ducumentation-js(data-value="ЖД «Мурас»") ЖД «Мурас»
+              .select-option.jetigen-ducumentation-js(data-value="ЖД «Жетиген»") ЖД «Жетиген»
 
         .documentation__type.all-ducumentation 
           .swiper.Swiper4
@@ -166,31 +191,30 @@ html(lang="en")
               +documentation('Технический паспорт ЖД «Жетиген»','/doc-jetigen/Технический паспорт ЖД «Жетиген».PDF')
             .swiper-button-next
             .swiper-button-prev
-        .documentation__type.objects
+        .documentation__type.muras-ducumentation
           .swiper.Swiper5
             .swiper-wrapper
               +documentation('Государственный акт ЖД «Мурас»','/doc-muras/Государственный акт ЖД «Мурас».PDF')
               +documentation('Технический паспорт ЖД «Мурас»','/doc-muras/Технический паспорт ЖД «Мурас».PDF')
+            
+            .swiper-button-next
+            .swiper-button-prev  
+
+        .documentation__type.jetigen-ducumentation
+          .swiper.Swiper6
+            .swiper-wrapper
               +documentation('Государственный акт ЖД «Жетиген»','/doc-jetigen/Государственный акт ЖД «Жетиген».PDF')
               +documentation('Градостроительное заключение ЖД «Жетиген»','/doc-jetigen/Градостроительное заключение ЖД «Жетиген».PDF')
               +documentation('Технический паспорт ЖД «Жетиген»','/doc-jetigen/Технический паспорт ЖД «Жетиген».PDF')
             .swiper-button-next
-            .swiper-button-prev  
-
-        .documentation__type.company
-          .swiper.Swiper6
-            .swiper-wrapper
-              +documentation('Лицензия <br> на строительтво','/doc-general/Лицензия на строительство.PDF')
-              +documentation('Свидетельство <br> о регистрации','/doc-general/Свидетельство о регистрации.PDF')
-            .swiper-button-next
             .swiper-button-prev
     
-    .news 
-      .container
-        #instafeed 
+    //- .news 
+    //-   .container
+    //-     #instafeed 
 
 
-    include ./partials/footer 
+    include ./partials/footer
 
        
     
@@ -199,3 +223,4 @@ html(lang="en")
     script(src="https://unpkg.com/swiper/swiper-bundle.min.js")  
     script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js")  
     script(src="/script.js")
+

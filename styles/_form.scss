@@ -1,0 +1,274 @@
+.form {
+  margin-bottom: 110px;
+
+  @include lg {
+    margin-bottom: 100px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
+  @include sm {
+    margin-bottom: 50px;
+  }
+
+  &__wrap {
+    @include aistr;
+    background-color: $wc;
+
+    @include md {
+      flex-direction: column-reverse
+    }
+  }
+
+  &__col {
+    @include aic;
+
+    &:first-child {
+      background-color: #F2F2F2;
+      padding: 60px 90px;
+      width: 48%;
+
+      @media (max-width: 1600px) {
+        width: 60%;
+      }
+
+      @media (max-width: 1300px) {
+        padding: 40px;
+      }
+
+      @include md {
+        width: 100%;
+      }
+
+      @include sm {
+        padding: 20px;
+      }
+
+      @include xs {
+        width: 100% !important;
+      }
+    }
+
+    &:last-child {
+      width: 52%;
+      background-size: cover;
+      background-position: center;
+
+      @media (max-width: 1600px) {
+        width: 40%;
+      }
+
+      @include md {
+        min-height: 300px;
+        width: 100%;
+        background-position: bottom;
+      }
+
+      @include xs {
+        display: none;
+      }
+    }
+  }
+
+  form {
+    @include jfcsb-fww;
+    width: 100%;
+
+    @include xs {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      &.btn--empty {
+        pointer-events: none;
+
+      }
+
+      span {
+        @include xs {
+          display: none;
+        }
+
+        &.mobile {
+          display: none;
+
+          @include xs {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 100px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1300px) {
+      font-size: 70px;
+    }
+
+    @include sm {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    @include xs {
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+
+  &__input {
+    width: calc(50% - 25px);
+    background-color: #E6E6E6;
+    padding: 5px 18px;
+    text-align: center;
+    margin-bottom: 50px;
+    min-height: 70px;
+    @include aic;
+
+    @include xs {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      .form__input-wrap {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__input-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include aic;
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: 1px;
+      width: 0;
+      background-color: $wc;
+      bottom: 0;
+      left: 0;
+      transition: $tr;
+    }
+  }
+
+  input {
+    color: $bc;
+    width: 100%;
+    font-size: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: relative;
+
+    &::placeholder {
+      color: $bc;
+      text-align: center;
+    }
+  }
+
+
+
+  &--modal {
+    margin: 0;
+    position: fixed;
+    top: -200%;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000, 0.45);
+    @include aic;
+    opacity: 0;
+    transition: $tr;
+    padding: 30px;
+
+    .container {
+      position: relative;
+
+      @include xs {
+        padding: 0;
+      }
+    }
+
+    .form__wrap {
+      max-width: 1500px;
+      margin: auto;
+      position: relative;
+    }
+
+    .form__col {
+      &:first-child {
+        width: 55%;
+        @include xs {
+          padding-top: 90px;
+        }
+      }
+
+      &:last-child {
+        width: 45%;
+        position: relative;
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .form__title {
+      @include xs {
+        font-size: 36px;
+        line-height: 39px;
+        text-align: center;
+      }
+    }
+  }
+
+  &--application {
+    .form__title {
+      font-size: 56px;
+    }
+
+    .form__wrap {
+      padding: 67px 100px;
+      flex-direction: column;
+      max-width: 1250px;
+    }
+
+    form {
+      @include aistr;
+      flex-wrap: nowrap;
+    }
+
+    .form__input {
+      max-width: 293px;
+      width: 100%;
+      margin: 0;
+    }
+
+    .form-fields {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+
+  &.open {
+    top: 0;
+    opacity: 1;
+  }
+}

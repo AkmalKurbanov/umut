@@ -1,6 +1,18 @@
 .documentation {
   margin-bottom: 130px;
 
+  @include lg {
+    margin-bottom: 100px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
+  @include sm {
+    margin-bottom: 50px;
+  }
+
   .container {
     overflow: hidden;
   }
@@ -20,13 +32,33 @@
   &__item {
     border: 1px solid $mc;
     padding: 30px 10px 30px 45px;
-    margin-bottom: 30px;
+
+    @media (max-width: 1700px) {
+      padding: 20px;
+    }
   }
 
   &__item-name {
     color: $bc;
     font-size: 30px;
     margin-bottom: 10px;
+
+    @media (max-width: 1700px) {
+      font-size: 25px;
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 23px;
+    }
+
+    @media (max-width: 1500px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 1400px) {
+      font-size: 21px;
+    }
+
   }
 
   &__item-link {
@@ -66,17 +98,17 @@
     top: -65px;
 
     &:after {
-      font-size: 30px;
+      font-size: 20px;
     }
   }
 
   .swiper-button-prev {
     left: auto;
-    right: 60px;
+    right: 30px;
   }
 
   .swiper-button-next {
-    right: 20px;
+    right: 0;
   }
 
 }

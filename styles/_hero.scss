@@ -1,0 +1,206 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  margin-bottom: 130px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @include lg {
+    margin-bottom: 100px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
+  @include sm {
+    margin-bottom: 50px;
+  }
+
+  @include xs {
+    background-image: url('../img/hero-mobile1.jpg');
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: linear-gradient(180deg,
+        transparent 75%,
+        rgba(255, 255, 255, .89) 100%);
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    background-image: url('../img/hero.png');
+    width: 100%;
+    max-width: 575px;
+    height: 45%;
+    bottom: 13%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+
+    @include xs {
+      display: block;
+    }
+  }
+
+  .container {
+    @include xs {
+      text-align: center;
+    }
+  }
+
+  &__video-bg {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    @include xs {
+      display: none;
+    }
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+
+  &__text {
+    position: relative;
+    padding-top: 65px;
+    z-index: 9;
+    width: 100%;
+
+    @include xs {
+      padding-top: 85px;
+      height: 100%;
+
+      .container {
+        height: 100%;
+        @include fdc-jfcsb;
+        align-items: center;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 100px;
+    line-height: 110px;
+    margin-bottom: 36px;
+    font-weight: 400;
+
+    @media (max-width: 1700px) {
+      font-size: 90px;
+      line-height: normal;
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 80px;
+    }
+
+    @media (max-width: 1500px) {
+      font-size: 70px;
+    }
+
+    @include lg {
+      font-size: 60px;
+    }
+
+    @include md {
+      font-size: 55px;
+      line-height: 60px;
+    }
+
+  }
+
+  &__subtitle {
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 60px;
+
+    @media (max-width: 1700px) {
+      font-size: 35px;
+      line-height: normal;
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 34px;
+    }
+
+    @media (max-width: 1500px) {
+      font-size: 33px;
+    }
+
+    @include lg {
+      font-size: 32px;
+    }
+
+    @include md {
+      font-size: 31px;
+    }
+
+    @include sm {
+      font-size: 30px;
+    }
+
+    @include xs {
+      display: none;
+    }
+  }
+
+  &--inner-page {
+    @include aife;
+    padding-bottom: 40px;
+    position: relative;
+    background-position: top center;
+    background-size: cover;
+    margin-bottom: 13px;
+
+    @include xs {
+      height: 480px;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      height: 50%;
+      width: 100%;
+      background: linear-gradient(360deg, #000000 -24.71%, rgba(0, 0, 0, 0) 64.86%);
+    }
+
+    .hero__title {
+      color: $wc;
+      font-size: 68px;
+      line-height: 74px;
+      margin-bottom: 10px;
+    }
+
+    .hero__subtitle {
+      color: $wc;
+      font-size: 32px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.mobile-popup {
+  background: rgba($bc, .45);
+  @include aic-jcc-fdc;
+  position: fixed;
+  top: -200%;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  padding: 30px;
+  opacity: 0;
+  transition: $tr;
+
+  &--menu {
+    .mobile-popup__wrap {
+      padding: 80px 40px 40px;
+    }
+  }
+
+  &--contacts {
+    .header__col {
+      &:last-child {
+        padding: 50px 40px;
+      }
+    }
+  }
+
+  &.open {
+    top: 0;
+    opacity: 1;
+  }
+
+  a {
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  &__wrap {
+    background-color: $wc;
+    @include aic-jcc-fdc;
+    max-width: 380px;
+    width: 100%;
+    position: relative;
+
+    .nav {
+      flex-direction: column;
+
+      li {
+        margin-right: 0 !important;
+        margin-bottom: 30px;
+
+        a {
+          font-size: 36px;
+          padding: 0;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .close-btn {
+      top: 30px;
+      right: 30px;
+
+      &:before,
+      &:after {
+        background-color: $bc;
+      }
+    }
+  }
+
+  .header__col,
+  .header__phones {
+    @include fdc;
+  }
+
+  .header__phone {
+    margin-right: 0;
+    margin-top: 20px;
+
+    @include xs {
+      padding: 0;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .header__phones {
+    @include xs {
+      position: relative;
+      top: auto;
+      box-shadow: none;
+    }
+  }
+
+  .header__col {
+    width: 100% !important;
+
+    @include xs {
+      display: flex !important;
+    }
+  }
+
+  #contacts {
+    width: 100%;
+    height: 290px;
+  }
+}

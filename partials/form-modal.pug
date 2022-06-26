@@ -1,7 +1,8 @@
-.form.form--modal
+.form.form--modal.consultation-window-js
   .container    
     .form__wrap
       .form__col
+        .close-btn
         form
           .form__title Бесплатная консультация
           .form__input
@@ -12,6 +13,6 @@
               input(type="text" placeholder="Номер телефона" name="phone" class="phone-js" autocomplete="off")
           button(type="submit").btn.btn--empty 
             span Получить обратный звонок
+            span.mobile Оставить заявку
       .form__col 
-        .close-btn
         img(src="/img/form.jpg", alt="") 

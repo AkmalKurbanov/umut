@@ -28,39 +28,59 @@
             .select-option(data-value="На стадии завершения").stage-completion-js На стадии завершения
             .select-option(data-value="Завершен").stage-completed-js Завершен
     .apartment-filter__body
-      mixin item(preview,mainImage,count,square, object, filter, condition)   
+      mixin muras(img,count,square, object, filter, status)   
         .apartment-filter__item(class=filter)   
           .apartment-filter__item-img
-            a(href=mainImage data-fancybox) 
-              img(src=preview, alt="")   
-          .apartment-filter__item-count=count   
-          .apartment-filter__item-square=square   
-          .apartment-filter__item-object=object 
-          .apartment-filter__item-object=condition 
-          button.btn.btn--empty
+            a(href="/img/muras/" + img + ".jpg" data-fancybox style="background-image: url('/img/muras/preview/"+img+".jpg')")
+            
+          .apartment-filter__item-count(data-count=count)=count   
+          .apartment-filter__item-square(data-square=square)=square   
+          .apartment-filter__item-object(data-object=object)=object
+          .apartment-filter__item-status.hidden(data-status=status) 
+          button.btn.btn--empty.btn-application-js
             span Оставить заявку   
-      +item('/img/room.png','/img/muras/1 комн. 42.1.jpg','1 комнатная квартира','42.1 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building three-room', 'На стадии строительства')
+      mixin jetigen(img,count,square, object, filter, status)   
+        .apartment-filter__item(class=filter)   
+          .apartment-filter__item-img
+            a(href="/img/jetigen/" + img + ".jpg" data-fancybox style="background-image: url('/img/jetigen/preview/"+img+".jpg')")
+            
+          .apartment-filter__item-count(data-count=count)=count   
+          .apartment-filter__item-square(data-square=square)=square   
+          .apartment-filter__item-object(data-object=object)=object
+          .apartment-filter__item-status.hidden(data-status=status) 
+          button.btn.btn--empty.btn-application-js
+            span Оставить заявку   
+      +muras('1 комн. 42.1','1 комнатная квартира','42.1 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1комн. 42.4','1 комнатная квартира','42.4 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('Зеркалальная 1 комн. 42.4','1 комнатная квартира','42.4 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1 комн. 42.5','1 комнатная квартира','42.5 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('Зеркальная 1 комн. 42.5','1 комнатная квартира','42.5 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1 комн. 43.0','1 комнатная квартира','43.0 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+            
+      +muras('2- комн 62.9','2 комнатная квартира','62.9 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('Зеркальная 2 комн. 62.9','2 комнатная квартира','62.9 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2 комн. 69.0','2 комнатная квартира','69.0 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2 комн. 69.66','2 комнатная квартира','69.66 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2 комн. 72','2 комнатная квартира','72.0 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room,', 'На стадии строительства')
+      +muras('2 комн. 72.1','2 комнатная квартира','72.1 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2 комн. 74.2','2 комнатная квартира','74.2 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('Зеркальная 2 комн. 74.2','2 комнатная квартира','74.2 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      
+      +jetigen('1 комн. 34,03','1 комнатная квартира','34,03 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 34,35','1 комнатная квартира','34,35 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 37,11','1 комнатная квартира','37,11 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 41,85','1 комнатная квартира','41,85 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 42,50','1 комнатная квартира','42,50 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 42,82','1 комнатная квартира','42,82 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 43,73','1 комнатная квартира','43,73 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('1 комн. 44,37','1 комнатная квартира','44,37 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
+      +jetigen('2 комн. 62,14','2 комнатная квартира','62,14 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building two-room', 'На стадии строительства')
+      +jetigen('2 комн. 77,78','2 комнатная квартира','77,78 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building two-room', 'На стадии строительства')
+      +jetigen('3 комн. 87,48','3 комнатная квартира','77,78 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building three-room', 'На стадии строительства')
+      
+      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room')
+      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room')
+      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building three-room')
 
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-completion one-room', 'На стадии завершения')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-completion two-room', 'На стадии завершения')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-completion three-room', 'На стадии завершения')
 
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-completed one-room', 'Завершен')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-completed two-room', 'Завершен')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-completed three-room', 'Завершен')
-
-
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building two-room', 'На стадии строительства')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building three-room', 'На стадии строительства')
-
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-completion one-room', 'На стадии завершения')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-completion two-room', 'На стадии завершения')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-completion three-room', 'На стадии завершения')
-
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-completed one-room', 'Завершен')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-completed two-room', 'Завершен')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-completed three-room', 'Завершен')
+         

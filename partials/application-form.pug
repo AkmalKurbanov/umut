@@ -1,0 +1,21 @@
+.form.form--modal.form--application
+  .container    
+    .form__wrap
+      .form__title Введите ваши контактные данные
+      form
+        //-  form settings
+        <input type="hidden" name="project_name" value='Строительная компанрия "Umut"'>
+        <input type="hidden" name="admin_email" value="250296a@gmail.com">
+        <input type="hidden" name="form_subject" value="Форма заявки">
+        //-  form settings
+      
+        .form__input
+          .form__input-wrap
+            input(type="text" placeholder="Ваше имя" name="name" class="name-js" autocomplete="off")
+        .form__input
+          .form__input-wrap
+            input(type="text" placeholder="Номер телефона" name="phone" class="phone-js" autocomplete="off")
+        button(type="submit").btn.btn--empty
+          span Получить обратный звонок 
+          span.mobile Оставить заявку 
+      

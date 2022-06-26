@@ -1,0 +1,185 @@
+.footer {
+  padding: 60px 0 57px;
+  border-top: 1px solid #F2F2F2;
+
+  @include xs {
+    padding: 40px 0;
+  }
+
+  .wrap {
+    margin: 0;
+    @include aic;
+
+    @include sm {
+      flex-direction: row;
+    }
+
+    @include xs {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .col {
+      width: auto;
+
+      @include xs {
+        display: none;
+      }
+
+      &:last-child {
+        width: 250px;
+
+        @include lg {
+          width: 150px;
+        }
+      }
+
+      .col {
+        width: auto;
+      }
+
+      &:first-child {
+        @include xs {
+          display: block;
+
+          .social {
+            display: none;
+          }
+        }
+
+        .col {
+          &:first-child {
+            margin-right: 80px;
+
+            @include md {
+              margin-right: 40px;
+            }
+
+            @include sm {
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__email {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: $bc;
+    transition: $tr;
+    display: block;
+
+    @include lg {
+      font-size: 20px;
+    }
+
+    @include xs {
+      font-size: 29px;
+    }
+
+    &:hover {
+      color: $mc;
+    }
+  }
+
+  &__nav {
+    @include aic;
+    margin-bottom: 40px;
+
+    li {
+      margin-right: 50px;
+
+      @include md {
+        margin-right: 30px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        transition: $tr;
+        color: $bc;
+        white-space: nowrap;
+
+        &:hover {
+          color: $mc;
+        }
+      }
+    }
+  }
+
+  &__phone {
+    @include aic;
+
+    li {
+      margin-right: 50px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        color: $mc;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 250px;
+    width: 100%;
+    @include aic;
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  .col-mobile-wrap {
+    display: none;
+
+    @include xs {
+      display: flex;
+    }
+
+    .footer__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          font-size: 22px;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .footer__phone {
+      flex-direction: column;
+
+      li {
+        margin: 0;
+        margin-bottom: 10px;
+
+        a {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .col-mobile-contacts {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}

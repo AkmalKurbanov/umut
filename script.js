@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    var $section = $($(this).attr('href'));
+    $('html, body').animate({
+      scrollTop: $section.offset().top
+    }, 700);
+  }
+  $('[data-scroll]').on('click', scrollToSection);
   $(".filter__item").on("click", function () {
       $(this).toggleClass("active"),
         $(".filter__item").not(this).removeClass("active")
@@ -13,7 +22,7 @@ $(document).ready(function () {
       }, 500);
       $(".building-objects, .done-objects").removeClass("show"),
         $(".building-objects, .done-objects").css("display", "none"),
-        $(".all-objects").css("display", "flex"),
+        $(".all-objects").css("display", "block"),
         setTimeout(function () {
           $(".all-objects").addClass("show")
         }, 300)
@@ -26,7 +35,7 @@ $(document).ready(function () {
       }, 500);
       $(".all-objects, .done-objects").removeClass("show"),
         $(".all-objects, .done-objects").css("display", "none"),
-        $(".building-objects").css("display", "flex"),
+        $(".building-objects").css("display", "block"),
         setTimeout(function () {
           $(".building-objects").addClass("show")
         }, 300)
@@ -38,7 +47,7 @@ $(document).ready(function () {
       }, 500);
       $(".all-objects, .building-objects").removeClass("show"),
         $(".all-objects, .building-objects").css("display", "none"),
-        $(".done-objects").css("display", "flex"),
+        $(".done-objects").css("display", "block"),
         setTimeout(function () {
           $(".done-objects").addClass("show")
         }, 300)
@@ -54,6 +63,7 @@ $(document).ready(function () {
       prevEl: ".swiper-button-prev",
     },
   });
+
   var Swiper2 = new Swiper(".Swiper2", {
     speed: 1000,
     allowTouchMove: false,
@@ -63,6 +73,7 @@ $(document).ready(function () {
       prevEl: ".swiper-button-prev",
     },
   });
+
   var Swiper3 = new Swiper(".Swiper3", {
     speed: 1000,
     allowTouchMove: false,
@@ -72,7 +83,7 @@ $(document).ready(function () {
       prevEl: ".swiper-button-prev",
     },
   });
-  
+
   $('.filter-select').on('click', function () {
     $(this).find('.select-dropdown').toggleClass('show');
     $('.filter-select').not(this).find('.select-dropdown').removeClass('show');
@@ -104,8 +115,8 @@ $(document).ready(function () {
   $(".all-ducumentation").addClass("show"),
 
     $(".all-ducumentation-js").on("click", function () {
-      $(".objects, .company").removeClass("show"),
-        $(".objects, .company").css("display", "none"),
+      $(".muras-ducumentation, .jetigen-ducumentation").removeClass("show"),
+        $(".muras-ducumentation, .jetigen-ducumentation").css("display", "none"),
         $(".all-ducumentation").css("display", "block"),
         setTimeout(function () {
           $(".all-ducumentation").addClass("show")
@@ -113,20 +124,20 @@ $(document).ready(function () {
     }),
 
 
-    $(".objects-js").on("click", function () {
-      $(".all-ducumentation, .company").removeClass("show"),
-        $(".all-ducumentation, .company").css("display", "none"),
-        $(".objects").css("display", "block"),
+    $(".muras-ducumentation-js").on("click", function () {
+      $(".all-ducumentation, .jetigen-ducumentation").removeClass("show"),
+        $(".all-ducumentation, .jetigen-ducumentation").css("display", "none"),
+        $(".muras-ducumentation").css("display", "block"),
         setTimeout(function () {
-          $(".objects").addClass("show")
+          $(".muras-ducumentation").addClass("show")
         }, 300)
     }),
-    $(".company-js").on("click", function () {
-      $(".all-ducumentation, .objects").removeClass("show"),
-        $(".all-ducumentation, .objects").css("display", "none"),
-        $(".company").css("display", "block"),
+    $(".jetigen-ducumentation-js").on("click", function () {
+      $(".all-ducumentation, .muras-ducumentation").removeClass("show"),
+        $(".all-ducumentation, .muras-ducumentation").css("display", "none"),
+        $(".jetigen-ducumentation").css("display", "block"),
         setTimeout(function () {
-          $(".company").addClass("show")
+          $(".jetigen-ducumentation").addClass("show")
         }, 300)
     })
 
@@ -135,32 +146,71 @@ $(document).ready(function () {
   var Swiper4 = new Swiper(".Swiper4", {
     speed: 500,
     allowTouchMove: false,
-    slidesPerView: 4,
-    spaceBetween: 50,
+    spaceBetween: 25,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      "0": {
+        slidesPerView: 1
+      },
+      "767": {
+        slidesPerView: 2
+      },
+      "991": {
+        slidesPerView: 3
+      },
+      "1200": {
+        slidesPerView: 4,
+      },
+    }
   });
   var Swiper5 = new Swiper(".Swiper5", {
     speed: 500,
     allowTouchMove: false,
-    slidesPerView: 4,
-    spaceBetween: 50,
+    spaceBetween: 25,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      "0": {
+        slidesPerView: 1
+      },
+      "767": {
+        slidesPerView: 2
+      },
+      "991": {
+        slidesPerView: 3
+      },
+      "1200": {
+        slidesPerView: 4,
+      },
+    }
   });
   var Swiper6 = new Swiper(".Swiper6", {
     speed: 500,
     allowTouchMove: false,
-    slidesPerView: 4,
-    spaceBetween: 50,
+    spaceBetween: 25,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      "0": {
+        slidesPerView: 1
+      },
+      "767": {
+        slidesPerView: 2
+      },
+      "991": {
+        slidesPerView: 3
+      },
+      "1200": {
+        slidesPerView: 4,
+      },
+    }
   });
   var Swiper7 = new Swiper(".Swiper7", {
     speed: 500,
@@ -171,17 +221,41 @@ $(document).ready(function () {
       prevEl: ".swiper-button-prev",
     },
   });
+  var apartmentSlider = new Swiper(".apartment-slider", {
+    speed: 500,
+    slidesPerView: 3,
+    spaceBetween: 50,
+    allowTouchMove: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      "0": {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      "575": {
+        slidesPerView: 2,
+        spaceBetween: 25,
+      },
+      "767": {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+    }
+  });
 
 
 
   $('.consultation-js').on('click', function (e) {
     e.preventDefault();
-    $('.form--modal').addClass('open');
-    $('body').addClass('no-scroll')
+    $('.consultation-window-js').addClass('open');
+    $('body').addClass('no-scroll');
   });
   $('.close-btn').on('click', function () {
-    $('.form--modal, .contacts, .apartment-filter').removeClass('open');
-    $('body').removeClass('no-scroll')
+    $('.form--modal, .contacts, .apartment-filter, .mobile-popup--menu').removeClass('open');
+    $('body').removeClass('no-scroll');
   });
 
 
@@ -196,10 +270,22 @@ $(document).ready(function () {
 
 
   $(document).mouseup(function (e) {
-    var div = $(".form__wrap, .contacts__wrap, .apartment-filter__wrap");
+    var div = $(".form__wrap, .contacts__wrap");
     if (!div.is(e.target) &&
       div.has(e.target).length === 0) {
-      $('.form--modal, .contacts, .apartment-filter').removeClass('open');
+      $('.form--modal, .contacts').removeClass('open');
+      $('body').removeClass('no-scroll');
+      if ($('.apartment-filter').hasClass('open')) {
+        $('body').addClass('no-scroll');
+      }
+      $('.form-fields').remove();
+    }
+  });
+  $(document).mouseup(function (e) {
+    var div = $(".apartment-filter__wrap, .fancybox-container, .form--application");
+    if (!div.is(e.target) &&
+      div.has(e.target).length === 0) {
+      $('.apartment-filter').removeClass('open');
       $('body').removeClass('no-scroll')
     }
   });
@@ -212,21 +298,18 @@ $(document).ready(function () {
 
   $('.contacts-js').on('click', function (e) {
     e.preventDefault();
-    $('.contacts').addClass('open');
+    $('.contacts, .mobile-popup--contacts').addClass('open');
     $('body').addClass('no-scroll')
   });
 
 
-
-  function scrollToSection(event) {
-    event.preventDefault();
-    var $section = $($(this).attr('href'));
-    $('html, body').animate({
-      scrollTop: $section.offset().top
-    }, 700);
-  }
-  $('[data-scroll]').on('click', scrollToSection);
-
+  $(document).mouseup(function (e) {
+    var div = $(".mobile-popup__wrap");
+    if (!div.is(e.target) &&
+      div.has(e.target).length === 0) {
+      $('.mobile-popup').removeClass('open');
+    }
+  });
 
 
 
@@ -487,4 +570,86 @@ $(document).ready(function () {
     }
 
   });
+
+
+
+  $('form').submit(function () {
+    var th = $(this);
+    $.ajax({
+      type: 'POST',
+      url: 'mail.php',
+      data: th.serialize()
+    }).done(function () {
+      $('.modalWindowWrap').fadeIn();
+    });
+    return false;
+  });
+  $('.btn-application-js').on('click', function () {
+    $('.form--application').addClass('open');
+    let roomCount = $(this).parent().find('.apartment-filter__item-count').attr('data-count');
+    let square = $(this).parent().find('.apartment-filter__item-square').attr('data-square');
+    let object = $(this).parent().find('.apartment-filter__item-object').attr('data-object');
+    let status = $(this).parent().find('.apartment-filter__item-status').attr('data-status');
+    console.log(roomCount, square, object, status);
+    $(`<div class="form-fields"><input type="hidden" name="Кол-во комнат" vaue="${roomCount}"/><input type="hidden" name="Площадь кв." vaue="${square}"/><input type="hidden" name="Жилой комплекс" vaue="${object}"/><input type="hidden" name="Статус комплекса" vaue="${status}"/></div>`).prependTo('.form--application form');
+  });
+
+  $('.header__phones-trigger').on('click', function () {
+    $('.phone-list-js').toggleClass('open');
+  });
+  $(document).mouseup(function (e) {
+    var div = $(".phone-list-js");
+    if (!div.is(e.target) &&
+      div.has(e.target).length === 0) {
+      div.removeClass('open');
+    }
+  });
+  $('.hamburger').on('click', function () {
+    $(this).toggleClass('open');
+    $('.mobile-popup--menu').addClass('open');
+  });
+  $('.mobile-popup--menu .close-btn').on('click', function () {
+    $('.hamburger').removeClass('open');
+  });
+  $(document).mouseup(function (e) {
+    var div = $(".mobile-popup__wrap");
+    if (!div.is(e.target) &&
+      div.has(e.target).length === 0) {
+      $('.mobile-popup--menu, .hamburger').removeClass('open');
+    }
+  });
+  $('.mobile-popup .nav a').on('click', function () {
+    $('.mobile-popup--menu, .hamburger').removeClass('open');
+  })
+
+
+
+
+
+
+
+
+
+
+
+  $(document).on("click", ".right", function () {
+    $(".Swiper1 .swiper-button-next").trigger("click");
+  });
+  $(document).on("click", ".left", function () {
+    $(".Swiper1 .swiper-button-prev").trigger("click");
+  });
+
+  $(document).on("click", ".right", function () {
+    $(".apartment-slider .swiper-button-next").trigger("click");
+  });
+  $(document).on("click", ".left", function () {
+    $(".apartment-slider .swiper-button-prev").trigger("click");
+  });
+
+
+
+  $('.footer__nav').clone().appendTo('.col-mobile-nav');
+  $('.footer__phone').clone().appendTo('.col-mobile-contacts');
+  $('.social').clone().appendTo('.col-mobile-contacts');
+
 });

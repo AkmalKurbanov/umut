@@ -1,0 +1,142 @@
+.banner {
+  margin-bottom: 120px;
+
+  @include lg {
+    margin-bottom: 100px;
+  }
+
+  @include md {
+    margin-bottom: 50px;
+  }
+
+  @include sm {
+    margin-bottom: 30px;
+  }
+
+  &__wrap {
+    @include aistr;
+
+    @media (max-width: 720px) {
+      @include aic-jcc-fdc;
+    }
+  }
+
+  &__item {
+    padding: 25px 45px;
+    position: relative;
+    width: 50%;
+
+    @include lg {
+      padding: 15px 25px;
+      min-height: 127px;
+      @include aic;
+    }
+
+    @include md {
+      padding: 10px;
+      min-height: 100px;
+    }
+
+    @media (max-width: 720px) {
+      width: 100%;
+      max-width: 380px;
+      margin-bottom: 30px;
+      padding: 20px 25px;
+    }
+
+    &:first-child {
+      background: linear-gradient(270deg, #0075FF 0%, #00C2FF 100%);
+
+      .banner__img {
+        top: 50%;
+        transform: translateY(-51.5%);
+        max-width: 325px;
+
+        @media (max-width: 1700px) {
+          max-width: 271px;
+        }
+
+        @media (max-width: 1500px) {
+          max-width: 250px;
+        }
+
+        @media (max-width: 1400px) {
+          max-width: 230px;
+        }
+
+        @media (max-width: 1300px) {
+          max-width: 210px;
+        }
+
+        @include md {
+          max-width: 170px;
+        }
+      }
+    }
+
+    &:last-child {
+      background: linear-gradient(90deg, #FF7A00 0%, #FFC700 100%);
+      margin: 0;
+      .banner__img {
+        top: 50%;
+        transform: translateY(-51.5%);
+        max-width: 355px;
+
+        @media (max-width: 1700px) {
+          max-width: 300px;
+        }
+
+        @media (max-width: 1500px) {
+          max-width: 250px;
+        }
+
+        @include md {
+          max-width: 170px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  &__title {
+    font-size: 56px;
+    line-height: 72px;
+    color: $wc;
+
+    @media (max-width: 1700px) {
+      font-size: 50px;
+      line-height: normal;
+    }
+
+    @media (max-width: 1500px) {
+      font-size: 45px;
+    }
+
+    @media (max-width: 1400px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 1300px) {
+      font-size: 35px;
+    }
+
+    @include lg {
+      font-size: 25px;
+    }
+
+    @include md {
+      font-size: 20px;
+    }
+
+    @media (max-width: 720px) {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+}

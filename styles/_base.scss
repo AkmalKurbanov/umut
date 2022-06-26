@@ -1,6 +1,6 @@
 @import '_mixins';
 @import '_variables';
-@include font-face("font", "./fonts/font", 400);
+@include font-face("font", "../fonts/font", 400);
 
 * {
   margin: 0;
@@ -27,6 +27,22 @@ body {
   width: 100%;
   margin: auto;
   padding: 0 15px;
+
+  @include lg {
+    max-width: 1000px;
+  }
+
+  @include md {
+    max-width: 920px;
+  }
+
+  @include sm {
+    max-width: 740px;
+  }
+
+  @include xs {
+    max-width: 100%;
+  }
 }
 
 .col-wrap {
@@ -126,8 +142,16 @@ a {
   @include aic;
   margin-bottom: 23px;
 
+  @include md {
+    display: block;
+  }
+
   .title {
     margin-bottom: 0;
+
+    @include md {
+      display: block;
+    }
   }
 }
 
@@ -138,20 +162,59 @@ a {
   color: $bc;
   margin-bottom: 35px;
   padding-left: 15px;
+  position: relative;
+
+  @include lg {
+    font-size: 50px;
+  }
+
+  @include md {
+    font-size: 45px;
+  }
+
+  @include sm {
+    font-size: 40px;
+  }
+
+  @include xs {
+    font-size: 36px;
+    line-height: 46px;
+  }
 }
 
 .wrap {
   @include jfcsb;
   margin-bottom: 130px;
 
+  @include lg {
+    margin-bottom: 100px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
+  @include sm {
+    margin-bottom: 50px;
+    flex-direction: column;
+  }
+
   .col {
     width: calc(33.33% - 25px);
+
+    @include sm {
+      width: 100%;
+    }
 
     .img {
       margin-bottom: 35px;
       position: relative;
       overflow: hidden;
       @include aic;
+
+      @include xs {
+        margin-bottom: 25px;
+      }
 
       &:before {
         position: absolute;
@@ -200,6 +263,22 @@ a {
       padding: 0;
       margin: 0;
       line-height: normal;
+
+      @include lg {
+        font-size: 22px;
+      }
+
+      @include md {
+        font-size: 21px;
+      }
+
+      @include sm {
+        font-size: 20px;
+      }
+
+      @include xs {
+        font-size: 19px;
+      }
     }
   }
 }
@@ -219,12 +298,12 @@ a {
     transform: translateY(-40px);
     transition: $tr;
     background-color: $wc;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border: 1px solid #83000B;
     min-width: 250px;
     pointer-events: none;
     opacity: 0;
     overflow: hidden;
+    left: 0;
 
     &.show {
       opacity: 1;
@@ -238,6 +317,7 @@ a {
   .selected,
   .select-option {
     cursor: pointer;
+
   }
 
 
@@ -247,6 +327,24 @@ a {
     position: relative;
     padding-right: 20px;
     margin-left: 50px;
+
+    @include md {
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    @include xs {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: $mc;
+
+      &:before,
+      &:after {
+        background-color: $mc;
+      }
+    }
 
     &:before,
     &:after {
@@ -278,7 +376,7 @@ a {
   }
 
   .select-option {
-    padding: 10px;
+    padding: 10px 30px;
     transition: $tr;
 
     &:hover {
@@ -319,6 +417,11 @@ a {
 
 .link {
   margin-left: 40px;
+  white-space: nowrap;
+
+  @include xs {
+    margin-left: 20px;
+  }
 }
 
 a.link {
@@ -326,6 +429,19 @@ a.link {
   color: #155dea;
   position: relative;
   padding-right: 20px;
+
+  @include xs {
+    font-size: 18px;
+  }
+
+  &:hover {
+    color: $mc;
+
+    &:before,
+    &:after {
+      background-color: $mc;
+    }
+  }
 
   &:before,
   &:after {
@@ -363,6 +479,11 @@ a.link {
   cursor: pointer;
   @include aic;
 
+  @include xs {
+    right: 30px;
+    top: 30px;
+  }
+
   &:hover {
 
     &:before,
@@ -379,6 +500,10 @@ a.link {
     height: 2px;
     background-color: $wc;
     transition: $tr;
+
+    @include xs {
+      background-color: $bc;
+    }
   }
 
   &:before {
@@ -387,5 +512,38 @@ a.link {
 
   &:after {
     transform: rotate(-45deg);
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+
+  @include sm {
+    @include aic;
+  }
+
+  .left,
+  .right {
+    width: 30px;
+    height: 30px;
+    @include aic;
+    color: rgba(21, 93, 234, 1);
+    font-size: 30px;
+  }
+
+  .left {
+    i {
+      transform: rotate(90deg);
+    }
+  }
+
+  .right {
+    i {
+      transform: rotate(-90deg);
+    }
   }
 }

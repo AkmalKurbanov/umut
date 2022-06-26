@@ -1,0 +1,13 @@
+.mobile-popup.mobile-popup--contacts
+  .mobile-popup__wrap
+    .close-btn
+    .header__col
+      #contacts
+    .header__col
+      button.btn.btn--empty.consultation-js Заказать звонок
+      .header__phones
+        mixin phone(phone)
+          a(href="tel:"+phone  class="header__phone")=phone 
+        +phone('+996 501 44 22 22')
+        +phone('+996 221 44 22 22')
+

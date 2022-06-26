@@ -1,0 +1,77 @@
+.advantages {
+  margin-bottom: 130px;
+
+  @include lg {
+    margin-bottom: 100px;
+  }
+
+  @include md {
+    margin-bottom: 70px;
+  }
+
+  @include sm {
+    margin-bottom: 50px;
+  }
+
+  &__banner {
+    position: relative;
+    margin-bottom: 55px;
+
+    @include lg {
+      margin-bottom: 45px;
+    }
+
+    @include md {
+      margin-bottom: 40px;
+    }
+
+    @include sm {
+      margin-bottom: 35px;
+    }
+
+    @include xs {
+      min-height: 380px;
+      background-image: url('../img/about-mobile.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 103%;
+      margin-left: -3%;
+
+      @include xs {
+        display: none;
+      }
+    }
+  }
+
+  &__banner-title {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+    background: #DD3241;
+    background: linear-gradient(to right, #DD3241 0%, #95202A 25%, #DD3241 40%, #95202A 61%, #DD3241 47%, #DD3241 50%, #95202A 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 90px;
+
+    @include lg {
+      font-size: 70px;
+    }
+
+    @include md {
+      font-size: 50px;
+    }
+
+    @include sm {
+      font-size: 40px;
+    }
+
+    @include xs {
+      right: 10%;
+      top: 10%;
+    }
+  }
+}
