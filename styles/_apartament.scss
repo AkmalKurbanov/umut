@@ -1,6 +1,6 @@
 .apartment {
   position: relative;
-  .wrap{
+  .wrap {
     flex-direction: row;
   }
   .swiper-button-next,
@@ -29,7 +29,7 @@
 .apartment-filter {
   position: fixed;
   z-index: -9;
-  background-color: rgba($bc, .45);
+  background-color: rgba($bc, 0.45);
   width: 100%;
   height: 100%;
   top: -200%;
@@ -44,25 +44,75 @@
     margin: auto;
     position: relative;
     padding: 30px 100px;
+
+    @media (max-width: 1700px) {
+      padding: 30px 70px;
+    }
+    @media (max-width: 1600px) {
+      padding: 30px 50px;
+    }
+    @media (max-width: 1500px) {
+      padding: 30px;
+    }
+    @media (max-width: 1400px) {
+      padding: 30px 15px;
+    }
+
+
+    .close-btn {
+      top: 5px;
+      right: 10px;
+      &::before,
+      &::after{
+        background-color: #000;
+      }
+    }
   }
 
   &__title {
     font-size: 36px;
     font-weight: 400;
+    @media (max-width: 1400px) {
+      font-size: 20px;
+    }
+
+     @include xs  {
+      font-size: 16px;
+     }
   }
 
   &__header {
     @include aifs-jfcsb;
+    @include xs {
+      flex-direction: column;
+      padding-top: 30px;
+    }
   }
 
   &__header-col {
     width: calc(33.33% - 50px);
+
+    @media (max-width: 1400px) {
+      width: calc(33.33% - 10px);
+    }
+    @include xs {
+      width: 100%;
+      margin-bottom: 15px;
+    }
   }
 
   .select {
     width: 100%;
     max-width: 365px;
     width: 100%;
+
+    @media (max-width: 1400px) {
+      max-width: 100%;
+      font-size: 14px;
+      * {
+        font-size: 14px;
+      }
+    }
   }
 
   .selected {
@@ -75,22 +125,40 @@
     @include aic-jfcfs;
     transition: $tr;
 
+    @media (max-width: 1400px) {
+      margin-top: 15px;
+      padding: 10px 30px 10px 10px;
+      min-height: 38px;
+    }
+
+    @include xs{
+      margin-top: 5px;
+    }
     &:before,
     &:after {
       background-color: $bc;
       top: 50%;
       height: 1px;
       width: 15px;
+      @media (max-width: 1400px) {
+        width: 10px;
+      }
     }
 
     &:before {
       transform: translateY(-50%) rotate(45deg);
       right: 30px;
+      @media (max-width: 1400px) {
+        right: 16px;
+      }
     }
 
     &:after {
       transform: translateY(-50%) rotate(-45deg);
       right: 20px;
+      @media (max-width: 1400px) {
+        right: 10px;
+      }
     }
 
     &:hover {
@@ -111,6 +179,12 @@
     border: 1px solid $bc;
     border-top: none;
 
+    .select-option {
+      @media (max-width: 1400px) {
+        padding: 5px 10px;
+      }
+    }
+
     &.show {
       transform: translateY(0);
     }
@@ -122,11 +196,13 @@
     margin-top: 50px;
     padding-right: 8px;
     position: relative;
-
+    @media (max-width: 1400px) {
+      margin-top: 30px;
+    }
     &::-webkit-scrollbar {
       width: 7px;
       height: 10px;
-      background-color: rgba(#019CFF, .3);
+      background-color: rgba(#019cff, 0.3);
     }
 
     &::-webkit-scrollbar-thumb {
@@ -141,7 +217,7 @@
 
   &__item {
     padding: 20px 50px 20px 30px;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     @include aic-jfcsb;
     margin-bottom: 50px;
     opacity: 0;
@@ -150,6 +226,15 @@
     width: 100%;
     left: 0;
     right: 0;
+
+    @media (max-width: 1400px) {
+      * {
+        font-size: 14px !important;
+      }
+    }
+    @include lg {
+      padding: 15px;
+    }
 
     &:last-child {
       margin: 0;
@@ -163,6 +248,12 @@
     .hidden {
       display: none;
     }
+
+    .btn {
+      @include sm {
+        padding: 10px;
+      }
+    }
   }
 
   &__item-img {
@@ -170,6 +261,11 @@
     width: 100%;
     height: 130px;
     position: relative;
+
+    @include xs {
+      max-width: 100px;
+      height: 100px;
+    }
 
     a {
       display: block;
@@ -181,10 +277,27 @@
     }
   }
 
+  &__item-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 30px;
+
+    @include sm {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
   &__item-count,
   &__item-square,
   &__item-object {
     font-size: 22px;
+    margin-right: 20px;
+    @include sm {
+      margin-bottom: 10px;
+    }
   }
 
   &.open {
@@ -192,6 +305,4 @@
     opacity: 1;
     z-index: 10;
   }
-
-
 }

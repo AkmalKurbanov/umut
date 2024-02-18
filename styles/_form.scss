@@ -18,7 +18,7 @@
     background-color: $wc;
 
     @include md {
-      flex-direction: column-reverse
+      flex-direction: column-reverse;
     }
   }
 
@@ -26,7 +26,7 @@
     @include aic;
 
     &:first-child {
-      background-color: #F2F2F2;
+      background-color: #f2f2f2;
       padding: 60px 90px;
       width: 48%;
 
@@ -84,7 +84,6 @@
     button {
       &.btn--empty {
         pointer-events: none;
-
       }
 
       span {
@@ -124,7 +123,7 @@
 
   &__input {
     width: calc(50% - 25px);
-    background-color: #E6E6E6;
+    background-color: #e6e6e6;
     padding: 5px 18px;
     text-align: center;
     margin-bottom: 50px;
@@ -153,7 +152,7 @@
 
     &:after {
       position: absolute;
-      content: '';
+      content: "";
       height: 1px;
       width: 0;
       background-color: $wc;
@@ -177,8 +176,6 @@
       text-align: center;
     }
   }
-
-
 
   &--modal {
     margin: 0;
@@ -246,17 +243,84 @@
       padding: 67px 100px;
       flex-direction: column;
       max-width: 1250px;
+
+      @media (max-width: 1700px) {
+        padding: 50px;
+      }
+      @media (max-width: 1500px) {
+        padding: 40px;
+      }
+      @media (max-width: 1400px) {
+        padding: 30px;
+      }
+      @media (max-width: 1200px) {
+        padding: 20px;
+      }
     }
 
     form {
       @include aistr;
       flex-wrap: nowrap;
+
+      @include sm {
+        flex-direction: column;
+      }
+    }
+    .form__title {
+      @media (max-width: 1700px) {
+        font-size: 50px;
+        margin-bottom: 35px;
+      }
+      @media (max-width: 1600px) {
+        font-size: 45px;
+        margin-bottom: 30px;
+      }
+      @media (max-width: 1500px) {
+        font-size: 40px;
+        margin-bottom: 25px;
+      }
+      @media (max-width: 1400px) {
+        font-size: 35px;
+        margin-bottom: 20px;
+      }
+      @include lg {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+      @include sm {
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+      @include xs {
+        font-size: 20px;
+      }
     }
 
     .form__input {
       max-width: 293px;
       width: 100%;
       margin: 0;
+
+      @media (max-width: 1700px) {
+        max-width: 400px;
+        margin-right: 10px;
+      }
+      @media (max-width: 1400px) {
+        max-width: 300px;
+        margin-right: 10px;
+      }
+      @include lg {
+        max-width: 270px;
+      }
+
+      @include md {
+        max-width: 200px;
+        font-size: 18px;
+      }
+      @include sm {
+        max-width: 100%;
+        margin-bottom: 15px;
+      }
     }
 
     .form-fields {
@@ -264,11 +328,54 @@
       opacity: 0;
       pointer-events: none;
     }
+    .btn {
+      white-space: nowrap;
+      @include lg {
+        font-size: 16px;
+      }
+    }
   }
-
 
   &.open {
     top: 0;
     opacity: 1;
+  }
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
+  z-index: 10;
+  display: none;
+
+  &__window {
+    background: white;
+    z-index: 1;
+    position: relative;
+    padding: 20px 15px;
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    h2 {
+      margin-bottom: 10px;
+      color: #83000b;
+    }
+  }
+  &__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
   }
 }

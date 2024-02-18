@@ -32,10 +32,20 @@
   &__item {
     border: 1px solid $mc;
     padding: 30px 10px 30px 45px;
-
+    min-height: 165px;
+    
     @media (max-width: 1700px) {
       padding: 20px;
+      min-height: 150px;
     }
+     @media (max-width: 1600px) {
+      min-height: 130px;
+    }
+    
+    @media (max-width: 767px) {
+      min-height: 125px;
+    }
+
   }
 
   &__item-name {
@@ -59,6 +69,24 @@
       font-size: 21px;
     }
 
+    &_sm {
+      font-size: 27px;
+      @media (max-width: 1700px) {
+        font-size: 24px;
+      }
+
+      @media (max-width: 1600px) {
+        font-size: 22px;
+      }
+
+      @media (max-width: 1500px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 1400px) {
+        font-size: 18px;
+      }
+    }
   }
 
   &__item-link {
@@ -75,8 +103,8 @@
 
     &:after {
       position: absolute;
-      content: '';
-      font-family: 'icon';
+      content: "";
+      font-family: "icon";
       font-size: 14px;
       margin-left: 9px;
       top: 50%;
@@ -110,5 +138,4 @@
   .swiper-button-next {
     right: 0;
   }
-
 }

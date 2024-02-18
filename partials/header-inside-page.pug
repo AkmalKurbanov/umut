@@ -11,14 +11,13 @@ header.header
             img(src="/img/logo.svg" alt="logo") 
       .header__col
         ul.nav
-          mixin nav(item, anchor, mod)
-            li
-              a(href="#"+anchor class=mod data-scroll)=item
-          +nav('Объекты','objects')
-          +nav('Акции')
-          +nav('Новости')
-          +nav('О нас','about')
-          +nav('Контакты','', 'contacts-js')
+          li
+              a(href="index.html#objects") Объекты
+          li
+              a(href="index.html#about") О нас
+          li
+              a(href="index.html#contacts-info") Контакты
+         
       .header__col
         .header__phones-trigger   
           i.icon-phone

@@ -31,41 +31,46 @@
       mixin muras(img,count,square, object, filter, status)   
         .apartment-filter__item(class=filter)   
           .apartment-filter__item-img
-            a(href="/img/muras/" + img + ".jpg" data-fancybox style="background-image: url('/img/muras/preview/"+img+".jpg')")
-            
-          .apartment-filter__item-count(data-count=count)=count   
-          .apartment-filter__item-square(data-square=square)=square   
-          .apartment-filter__item-object(data-object=object)=object
-          .apartment-filter__item-status.hidden(data-status=status) 
-          button.btn.btn--empty.btn-application-js
-            span Оставить заявку   
+            a(href="/img/muras/" + img + ".webp" data-fancybox style="background-image: url('/img/muras/preview/"+img+".webp')")
+
+          .apartment-filter__item-wrap 
+            .apartment-filter__item-count(data-count=count)=count   
+            .apartment-filter__item-square(data-square=square)=square   
+            .apartment-filter__item-object(data-object=object)=object
+            .apartment-filter__item-status.hidden(data-status=status) 
+            button.btn.btn--empty.btn-application-js
+              span Оставить заявку   
       mixin jetigen(img,count,square, object, filter, status)   
         .apartment-filter__item(class=filter)   
           .apartment-filter__item-img
-            a(href="/img/jetigen/" + img + ".jpg" data-fancybox style="background-image: url('/img/jetigen/preview/"+img+".jpg')")
+            a(href="/img/jetigen/" + img + ".webp" data-fancybox style="background-image: url('/img/jetigen/preview/"+img+".webp')")
             
-          .apartment-filter__item-count(data-count=count)=count   
-          .apartment-filter__item-square(data-square=square)=square   
-          .apartment-filter__item-object(data-object=object)=object
-          .apartment-filter__item-status.hidden(data-status=status) 
-          button.btn.btn--empty.btn-application-js
-            span Оставить заявку   
-      +muras('1 комн. 42.1','1 комнатная квартира','42.1 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      +muras('1комн. 42.4','1 комнатная квартира','42.4 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      +muras('Зеркалальная 1 комн. 42.4','1 комнатная квартира','42.4 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      +muras('1 комн. 42.5','1 комнатная квартира','42.5 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      +muras('Зеркальная 1 комн. 42.5','1 комнатная квартира','42.5 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
-      +muras('1 комн. 43.0','1 комнатная квартира','43.0 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+          .apartment-filter__item-wrap 
+            .apartment-filter__item-count(data-count=count)=count   
+            .apartment-filter__item-square(data-square=square)=square   
+            .apartment-filter__item-object(data-object=object)=object
+            .apartment-filter__item-status.hidden(data-status=status) 
+            button.btn.btn--empty.btn-application-js
+              span Оставить заявку   
+      +muras('1.25.17','1 комнатная квартира','25,17 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1.43.51','1 комнатная квартира','43,51 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1.44.41','1 комнатная квартира','44,41 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1.44.95','1 комнатная квартира','44,95 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1.44.97','1 комнатная квартира','44,97 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1.45.45','1 комнатная квартира','45,45 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
+      +muras('1.45.85','1 комнатная квартира','45,85 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room', 'На стадии строительства')
             
-      +muras('2- комн 62.9','2 комнатная квартира','62.9 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      +muras('Зеркальная 2 комн. 62.9','2 комнатная квартира','62.9 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      +muras('2 комн. 69.0','2 комнатная квартира','69.0 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      +muras('2 комн. 69.66','2 комнатная квартира','69.66 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      +muras('2 комн. 72','2 комнатная квартира','72.0 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room,', 'На стадии строительства')
-      +muras('2 комн. 72.1','2 комнатная квартира','72.1 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      +muras('2 комн. 74.2','2 комнатная квартира','74.2 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
-      +muras('Зеркальная 2 комн. 74.2','2 комнатная квартира','74.2 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.57.47','2 комнатная квартира','57,47 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.66.72','2 комнатная квартира','66,72 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.67.62','2 комнатная квартира','67,62 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.67.74','2 комнатная квартира','67,74 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.67.74-invert','2 комнатная квартира','67.74 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.69.43','2 комнатная квартира','69,43 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.70.01','2 комнатная квартира','70,01 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
+      +muras('2.73.16','2 комнатная квартира','73,16 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room', 'На стадии строительства')
       
+      +muras('3.105.79','3 комнатная квартира','105,79 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building three-room', 'На стадии строительства')
+
       +jetigen('1 комн. 34,03','1 комнатная квартира','34,03 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
       +jetigen('1 комн. 34,35','1 комнатная квартира','34,35 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
       +jetigen('1 комн. 37,11','1 комнатная квартира','37,11 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building one-room', 'На стадии строительства')
@@ -78,9 +83,9 @@
       +jetigen('2 комн. 77,78','2 комнатная квартира','77,78 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building two-room', 'На стадии строительства')
       +jetigen('3 комн. 87,48','3 комнатная квартира','77,78 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building three-room', 'На стадии строительства')
       
-      //- +item('/img/room.png','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room')
-      //- +item('/img/room.png','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room')
-      //- +item('/img/room.png','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building three-room')
+      //- +item('/img/room.webp','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room')
+      //- +item('/img/room.webp','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room')
+      //- +item('/img/room.webp','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building three-room')
 
 
          

@@ -4,9 +4,16 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title Umutstroy Muras
+    link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
+    link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
+    link(rel='manifest' href='/site.webmanifest')
+    meta(name='msapplication-TileColor' content='#da532c')
+    meta(name='theme-color' content='#ffffff')
+
     link(rel="stylesheet", href="https://unpkg.com/swiper/swiper-bundle.min.css")
-    link(rel="stylesheet", href="styles/style.css")
+    link(rel="stylesheet", href="style.css")
     link(rel="stylesheet", href="/icon/css/icon.css")
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
@@ -15,6 +22,19 @@ html(lang="en")
     script(src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full")
     script(type='text/javascript').
     script(type='text/javascript').
+      var contacts;
+      DG.then(function () {
+      contacts = DG.map('contacts', {
+      center: [42.849721, 74.588852],
+      scrollWheelZoom: false,
+      zoom: 20
+      });
+      var myIcon = L.icon({
+      iconUrl: '/img/logo.webp',
+      iconSize: [70, 30],
+      });
+      DG.marker([42.849721, 74.588852],{icon: myIcon}).addTo(contacts).bindPopup('Строительная копания «UMUT» <br> улица Джаманбаева, 33',)}); 
+
       var map;
       DG.then(function () {
       map = DG.map('map', {
@@ -23,48 +43,51 @@ html(lang="en")
       zoom: 20
       });
       var myIcon = L.icon({
-      iconUrl: 'img/muras/muras-marker.png',
+      iconUrl: '/img/muras/muras-marker.webp',
       iconSize: [70, 70],
       });
       DG.marker([42.8464, 74.5610],{icon: myIcon}).addTo(map).bindLabel('ЖД «Мурас» ул. Курчатова 23, <br> «Нижний Джал»', {static: true})});
-
-
+    
 
   body
     include ./partials/header-inside-page
+    include ./partials/call-back-popup
     
-    .hero.hero--inner-page(style="background-image: url('/img/muras/muras.png');")
+    .hero.hero--inner-page(style="background-image: url('/img/muras/muras.webp');")
     
     .container
       .title-wrap
         h2.title Жилой дом «Мурас»
         a(href="#location" data-scroll).link Показать на карте   
-        a(href="/img/muras/1 комн. 42.1.jpg" data-fancybox="gallery").link Посмотреть планировки
+        a(href="/img/muras/1.25.17.webp" data-fancybox="gallery").link Посмотреть планировки
         .gallery
           mixin gallery(img)
-            a(href="/img/muras/"+img+".jpg" data-fancybox="gallery" ).gallery__item
-          +gallery('1 комн. 42.5')  
-          +gallery('1 комн. 43.0')  
-          +gallery('1комн. 42.4')  
-          +gallery('2- комн 62.9')  
-          +gallery('2 комн. 69.0')  
-          +gallery('2 комн. 69.66')  
-          +gallery('2 комн. 72.1')  
-          +gallery('2 комн. 72')  
-          +gallery('2 комн. 74.2')  
-          +gallery('3 комн. 109.7')  
-          +gallery('Зеркалальная 1 комн. 42.4')  
-          +gallery('Зеркальная 1 комн. 42.5')  
-          +gallery('Зеркальная 2 комн. 62.9')  
-          +gallery('Зеркальная 2 комн. 74.2')  
+            a(href="/img/muras/"+img+".webp" data-fancybox="gallery" ).gallery__item
+          +gallery('1.25.17')
+          +gallery('1.43.51')
+          +gallery('1.44.41')
+          +gallery('1.44.95')
+          +gallery('1.44.97')
+          +gallery('1.45.45')
+          +gallery('1.45.85')
+          +gallery('2.57.47')
+          +gallery('2.66.72')
+          +gallery('2.67.62')
+          +gallery('2.67.74')
+          +gallery('2.67.74-invert')
+          +gallery('2.69.43')
+          +gallery('2.70.01')
+          +gallery('2.73.16')
+          +gallery('3.105.79')
+
         a(href="#documentation" data-scroll).link Документация  
-        a(href="/img/muras/Планировка типового этажа ЖД «Мурас».pdf" data-fancybox).link План типового этажа   
+        a(href="/img/muras/plan-muras.pdf" target="_blank").link План типового этажа   
 
       .wrap
           mixin item(img,title) 
-            a(href="#").col 
+            .col 
               .img.img--tranlste-off
-                img(src="/img/muras/muras"+img+".jpg", alt="") 
+                img(src="/img/muras/muras"+img+".webp", alt="") 
               .title!=title 
           +item(1,'10 этажей')
           +item(2,'4 подъезда')
