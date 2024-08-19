@@ -31,7 +31,7 @@
       mixin muras(img,count,square, object, filter, status)   
         .apartment-filter__item(class=filter)   
           .apartment-filter__item-img
-            a(href="/img/muras/" + img + ".webp" data-fancybox style="background-image: url('/img/muras/preview/"+img+".webp')")
+            a(href="img/muras/" + img + ".webp" data-fancybox style="background-image: url('img/muras/preview/"+img+".webp')")
 
           .apartment-filter__item-wrap 
             .apartment-filter__item-count(data-count=count)=count   
@@ -43,7 +43,7 @@
       mixin jetigen(img,count,square, object, filter, status)   
         .apartment-filter__item(class=filter)   
           .apartment-filter__item-img
-            a(href="/img/jetigen/" + img + ".webp" data-fancybox style="background-image: url('/img/jetigen/preview/"+img+".webp')")
+            a(href="img/jetigen/" + img + ".webp" data-fancybox style="background-image: url('img/jetigen/preview/"+img+".webp')")
             
           .apartment-filter__item-wrap 
             .apartment-filter__item-count(data-count=count)=count   
@@ -83,9 +83,9 @@
       +jetigen('2 комн. 77,78','2 комнатная квартира','77,78 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building two-room', 'На стадии строительства')
       +jetigen('3 комн. 87,48','3 комнатная квартира','77,78 м2','ЖД «Жетиген»','all-obj jetigen-obj stage-building three-room', 'На стадии строительства')
       
-      //- +item('/img/room.webp','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room')
-      //- +item('/img/room.webp','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room')
-      //- +item('/img/room.webp','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building three-room')
+      //- +item('img/room.webp','','1 комнатная квартира','109.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building one-room')
+      //- +item('img/room.webp','','2 комнатная квартира','209.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building two-room')
+      //- +item('img/room.webp','','3 комнатная квартира','309.7 м2','ЖД «Мурас»','all-obj muras-obj stage-building three-room')
 
 
          

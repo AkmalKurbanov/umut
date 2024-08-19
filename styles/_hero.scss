@@ -19,7 +19,7 @@
   }
 
   @include xs {
-    background-image: url('../img/hero-mobile1.jpg');
+    background-image: url('img/hero-mobile1.jpg');
   }
 
   &:before {
@@ -38,7 +38,7 @@
   &:after {
     position: absolute;
     content: '';
-    background-image: url('../img/hero.png');
+    background-image: url('..img/hero.png');
     width: 100%;
     max-width: 575px;
     height: 45%;

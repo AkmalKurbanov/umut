@@ -6,15 +6,15 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Umutstroy Muras
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
-    link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
-    link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
-    link(rel='manifest' href='/site.webmanifest')
+    link(rel='icon' type='image/png' sizes='32x32' href='favicon-32x32.png')
+    link(rel='icon' type='image/png' sizes='16x16' href='favicon-16x16.png')
+    link(rel='manifest' href='site.webmanifest')
     meta(name='msapplication-TileColor' content='#da532c')
     meta(name='theme-color' content='#ffffff')
 
     link(rel="stylesheet", href="https://unpkg.com/swiper/swiper-bundle.min.css")
     link(rel="stylesheet", href="style.css")
-    link(rel="stylesheet", href="/icon/css/icon.css")
+    link(rel="stylesheet", href="icon/css/icon.css")
     link(rel='preconnect' href='https://fonts.googleapis.com')
     link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
     link(href='https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap' rel='stylesheet')
@@ -30,7 +30,7 @@ html(lang="en")
       zoom: 20
       });
       var myIcon = L.icon({
-      iconUrl: '/img/logo.webp',
+      iconUrl: 'img/logo.webp',
       iconSize: [70, 30],
       });
       DG.marker([42.849721, 74.588852],{icon: myIcon}).addTo(contacts).bindPopup('Строительная копания «UMUT» <br> улица Джаманбаева, 33',)}); 
@@ -43,7 +43,7 @@ html(lang="en")
       zoom: 20
       });
       var myIcon = L.icon({
-      iconUrl: '/img/muras/muras-marker.webp',
+      iconUrl: 'img/muras/muras-marker.webp',
       iconSize: [70, 70],
       });
       DG.marker([42.8464, 74.5610],{icon: myIcon}).addTo(map).bindLabel('ЖД «Мурас» ул. Курчатова 23, <br> «Нижний Джал»', {static: true})});
@@ -53,16 +53,16 @@ html(lang="en")
     include ./partials/header-inside-page
     include ./partials/call-back-popup
     
-    .hero.hero--inner-page(style="background-image: url('/img/muras/muras.webp');")
+    .hero.hero--inner-page(style="background-image: url('img/muras/muras.webp');")
     
     .container
       .title-wrap
         h2.title Жилой дом «Мурас»
         a(href="#location" data-scroll).link Показать на карте   
-        a(href="/img/muras/1.25.17.webp" data-fancybox="gallery").link Посмотреть планировки
+        a(href="img/muras/1.25.17.webp" data-fancybox="gallery").link Посмотреть планировки
         .gallery
           mixin gallery(img)
-            a(href="/img/muras/"+img+".webp" data-fancybox="gallery" ).gallery__item
+            a(href="img/muras/"+img+".webp" data-fancybox="gallery" ).gallery__item
           +gallery('1.25.17')
           +gallery('1.43.51')
           +gallery('1.44.41')
@@ -81,13 +81,13 @@ html(lang="en")
           +gallery('3.105.79')
 
         a(href="#documentation" data-scroll).link Документация  
-        a(href="/img/muras/plan-muras.pdf" target="_blank").link План типового этажа   
+        a(href="img/muras/plan-muras.pdf" target="_blank").link План типового этажа   
 
       .wrap
           mixin item(img,title) 
             .col 
               .img.img--tranlste-off
-                img(src="/img/muras/muras"+img+".webp", alt="") 
+                img(src="img/muras/muras"+img+".webp", alt="") 
               .title!=title 
           +item(1,'10 этажей')
           +item(2,'4 подъезда')
@@ -122,4 +122,4 @@ html(lang="en")
     script(src="https://code.jquery.com/jquery-3.6.0.js")  
     script(src="https://unpkg.com/swiper/swiper-bundle.min.js")  
     script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js")  
-    script(src="/script.js")
+    script(src="script.js")

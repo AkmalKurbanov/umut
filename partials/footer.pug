@@ -8,18 +8,18 @@ footer.footer#contacts-info
             ul.social
               mixin social(icon, link)
                 li 
-                  a(href=link)
+                  a(href=link target="_blank")
                     i(class=icon)
-              +social('icon-instagram','#')         
-              +social('icon-facebook','#')         
-              +social('icon-whatsapp','#')         
+              +social('icon-instagram','https://www.instagram.com/umutstroy.kg/')         
+              +social('icon-facebook','https://www.facebook.com/p/Umut-stroy-100089027432670/')         
+              +social('icon-whatsapp','https://wa.me/+996505440020')         
           .col
             ul.footer__nav
               mixin nav(item, link)
                 li 
                   a(href=link)=item 
-              +nav('Объекты', '#')    
-              +nav('О нас', '#')    
+              +nav('Объекты', 'index.html#objects')    
+              +nav('О нас', '#index.html#about')    
             ul.footer__phone
               mixin phone(phone)
                 li 
@@ -28,7 +28,7 @@ footer.footer#contacts-info
               +phone('+996 221 44 22 22')    
       .col
         a(href="/").footer__logo
-          img(src="/img/logo.svg", alt="")
+          img(src="img/logo.svg", alt="")
       .col-mobile-wrap
         .col-mobile-nav    
         .col-mobile-contacts    
