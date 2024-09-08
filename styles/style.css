@@ -926,7 +926,7 @@ a.link:after {
 }
 @media (max-width: 575.98px) {
   .hero {
-    background-image: url("img/hero-mobile1.jpg");
+    background-image: url("img/hero-mobile1.webp");
   }
 }
 .hero:before {
@@ -942,7 +942,7 @@ a.link:after {
 .hero:after {
   position: absolute;
   content: "";
-  background-image: url("..img/hero.png");
+  background-image: url("img/hero.webp");
   width: 100%;
   max-width: 575px;
   height: 45%;
@@ -1674,7 +1674,7 @@ a.link:after {
 @media (max-width: 575.98px) {
   .advantages__banner {
     min-height: 380px;
-    background-image: url("..img/about-mobile.jpg");
+    background-image: url("img/about-mobile.webp");
     background-size: cover;
     background-position: center;
     margin-bottom: 0;

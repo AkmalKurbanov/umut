@@ -94,8 +94,8 @@ html(lang="en")
                         .object__info-bottom-item=floor
                 
                 
-              +allObjects('muras/muras.webp', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '/muras.html#location', 'muras', 'none')
-              +allObjects('jetigen/jetigen.webp', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', '/jetigen.html#location', 'jetigen', 'none')
+              +allObjects('muras/muras.webp', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', 'muras.html#location', 'muras', 'none')
+              +allObjects('jetigen/jetigen.webp', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', 'jetigen.html#location', 'jetigen', 'none')
             .swiper-button-next
             .swiper-button-prev
 
@@ -103,8 +103,8 @@ html(lang="en")
         .object__type.building-objects
           .swiper.Swiper2
             .swiper-wrapper
-              +allObjects('jetigen/jetigen.webp', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', '/jetigen.html#location', 'jetigen', 'На стадии строительтва')
-              +allObjects('muras/muras.webp', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '/muras.html#location', '/muras', 'На стадии строительтва')
+              +allObjects('jetigen/jetigen.webp', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', 'jetigen.html#location', 'jetigen', 'На стадии строительтва')
+              +allObjects('muras/muras.webp', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', 'muras.html#location', 'muras', 'На стадии строительтва')
             .swiper-button-next
             .swiper-button-prev
 
@@ -112,8 +112,8 @@ html(lang="en")
         .object__type.done-objects
           .swiper.Swiper3
             .swiper-wrapper
-              +allObjects('muras/muras.webp', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', '/muras.html#location', '/muras', 'Завершен')
-              +allObjects('jetigen/jetigen.webp', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', '/jetigen.html#location', 'jetigen', 'Завершен')
+              +allObjects('muras/muras.webp', 'Жилой дом «Мурас»', 'Курчатова 25, «Нижний Джал»', 'Комфорт класс','10 этажей', 'muras.html#location', 'muras', 'Завершен')
+              +allObjects('jetigen/jetigen.webp', 'Жилой дом «Жетиген»', 'Муса-Джалила 132, пер. Буденого', 'Комфорт класс','8 этажей', 'jetigen.html#location', 'jetigen', 'Завершен')
             .swiper-button-next
             .swiper-button-prev
 
@@ -189,20 +189,20 @@ html(lang="en")
                   .documentation__item
                     .documentation__item-name(class=mod)!=name
                     a(href=link download).documentation__item-link Скачать PDF файл
-              +documentation('Лицензия <br> на строительтво','/doc-general/Лицензия на строительство.PDF')
-              +documentation('Свидетельство <br> о регистрации','/doc-general/Свидетельство о регистрации.PDF')
-              +documentation('Государственный акт ЖД «Мурас»','/doc-muras/Государственный акт ЖД «Мурас».PDF')
-              +documentation('Технический паспорт ЖД «Мурас»','/doc-muras/Технический паспорт ЖД «Мурас».PDF')
-              +documentation('Государственный акт ЖД «Жетиген»','/doc-jetigen/Государственный акт ЖД «Жетиген».PDF')
-              +documentation('Градостроительное заключение ЖД «Жетиген»','/doc-jetigen/Градостроительное заключение ЖД «Жетиген».PDF','documentation__item-name_sm')
-              +documentation('Технический паспорт ЖД «Жетиген»','/doc-jetigen/Технический паспорт ЖД «Жетиген».PDF')
+              +documentation('Лицензия <br> на строительтво','doc-general/Лицензия на строительство.PDF')
+              +documentation('Свидетельство <br> о регистрации','doc-general/Свидетельство о регистрации.PDF')
+              +documentation('Государственный акт ЖД «Мурас»','doc-muras/Государственный акт ЖД Мурас.PDF')
+              +documentation('Технический паспорт ЖД «Мурас»','doc-muras/Технический паспорт ЖД Мурас.PDF')
+              +documentation('Государственный акт ЖД «Жетиген»','doc-jetigen/Государственный акт ЖД Жетиген.PDF')
+              +documentation('Градостроительное заключение ЖД «Жетиген»','doc-jetigen/Градостроительное заключение ЖД Жетиген.PDF','documentation__item-name_sm')
+              +documentation('Технический паспорт ЖД «Жетиген»','doc-jetigen/Технический паспорт ЖД Жетиген.PDF')
             .swiper-button-next
             .swiper-button-prev
         .documentation__type.muras-ducumentation
           .swiper.Swiper5
             .swiper-wrapper
-              +documentation('Государственный акт ЖД «Мурас»','/doc-muras/Государственный акт ЖД «Мурас».PDF')
-              +documentation('Технический паспорт ЖД «Мурас»','/doc-muras/Технический паспорт ЖД «Мурас».PDF')
+              +documentation('Государственный акт ЖД «Мурас»','doc-muras/Государственный акт ЖД Мурас.PDF')
+              +documentation('Технический паспорт ЖД «Мурас»','doc-muras/Технический паспорт ЖД Мурас.PDF')
             
             .swiper-button-next
             .swiper-button-prev  
@@ -210,9 +210,9 @@ html(lang="en")
         .documentation__type.jetigen-ducumentation
           .swiper.Swiper6
             .swiper-wrapper
-              +documentation('Государственный акт ЖД «Жетиген»','/doc-jetigen/Государственный акт ЖД «Жетиген».PDF')
-              +documentation('Градостроительное заключение ЖД «Жетиген»','/doc-jetigen/Градостроительное заключение ЖД «Жетиген».PDF')
-              +documentation('Технический паспорт ЖД «Жетиген»','/doc-jetigen/Технический паспорт ЖД «Жетиген».PDF')
+              +documentation('Государственный акт ЖД «Жетиген»','doc-jetigen/Государственный акт ЖД Жетиген.PDF')
+              +documentation('Градостроительное заключение ЖД «Жетиген»','doc-jetigen/Градостроительное заключение ЖД Жетиген.PDF')
+              +documentation('Технический паспорт ЖД «Жетиген»','doc-jetigen/Технический паспорт ЖД Жетиген.PDF')
             .swiper-button-next
             .swiper-button-prev
     
